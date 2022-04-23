@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -20,39 +20,33 @@ RUN apt-get -y update \
     cmake \
     gdb \
     git \
-    python3 \
-    pkg-config \
+    python3\
     libdc1394-25\
     libdc1394-dev  \
+    pkg-config \
     libgstreamer1.0-0 \
     libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-0 \
     libgstreamer-plugins-base1.0-dev \
     libgtk-3-dev \
+    qt5-default \
     libeigen3-dev \
-    libtbb12 \
+    libtbb2 \
     libtbb-dev \
     libatlas-base-dev \
-    libjpeg8 \
     libjpeg8-dev \
     libpng-dev \
-    libpng16-16 \
-    libpng++-dev \
     libxine2 \
     libxine2-dev \
     x11-apps \
-    qtbase5-dev \
-    qtchooser \
-    qt5-qmake \
-    qtbase5-dev-tools \
     libavcodec58\
     libavcodec-dev\
     libavformat58 \
     libavformat-dev \
     libavutil56 \
     libavutil-dev \
-    libswresample3 \
-    libswresample-dev \
+    libavresample4 \
+    libavresample-dev \
     libswscale5 \
     libswscale-dev \
     && cd /home \
@@ -80,7 +74,7 @@ RUN apt-get -y update \
     && make -j12 \
     && make install \
     && ldconfig -v \
-    && apt-get -y purge unzip \
+    && apt -y purge unzip \
     libatlas-base-dev \
     libgtk-3-dev \
     libeigen3-dev \
@@ -90,16 +84,14 @@ RUN apt-get -y update \
     libavcodec-dev \
     libavformat-dev \
     libavutil-dev \
-    libswresample-dev \
+    libavresample-dev \
     libswscale-dev \
     libdc1394-dev \
     libjpeg8-dev \
     libxine2-dev \
-    libpng-dev \
-    libpng++-dev \
     software-properties-common \
-    apt-fast \
     apt-utils \
+    apt-fast \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && apt-get autoclean -y \

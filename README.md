@@ -25,9 +25,6 @@ You may want to run it like this(X11):
 ```bash
 xhost +local:docker
 docker run -it \
-            -v /home/wuxinyu/Pictures/:/root/Pictures \
-            -v /home/wuxinyu/Videos/:/root/Videos/ \
-            -v /mnt/608AF1968AF168C4/Users/xinyu/Desktop/机器视觉/作业/:/root/homework \
             -v /tmp/.x11-unix:/tmp/.x11-unix \
             -e DISPLAY=$DISPLAY \
             -e GDK_SCALE \
@@ -42,9 +39,6 @@ docker run -it \
 or this (Wayland)
 ```bash
 docker run -it \
-            -v /home/wuxinyu/Pictures/:/root/Pictures \
-            -v /home/wuxinyu/Videos/:/root/Videos/ \
-            -v /mnt/608AF1968AF168C4/Users/xinyu/Desktop/机器视觉/作业/:/root/homework \
             -e XDG_SESSION_TYPE=wayland \
             -e XDG_RUNTIME_DIR=/tmp \
             -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \

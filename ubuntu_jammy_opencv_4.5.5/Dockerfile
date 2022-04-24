@@ -41,6 +41,7 @@ RUN apt-get -y update \
     libxine2 \
     libxine2-dev \
     x11-apps \
+    qtwayland5 \
     qtbase5-dev \
     qtchooser \
     qt5-qmake \

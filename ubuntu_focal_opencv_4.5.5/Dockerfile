@@ -39,6 +39,7 @@ RUN apt-get -y update \
     libxine2 \
     libxine2-dev \
     x11-apps \
+    qtwayland5 \
     libavcodec58\
     libavcodec-dev\
     libavformat58 \

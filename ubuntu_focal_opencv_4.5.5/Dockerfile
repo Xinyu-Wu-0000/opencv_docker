@@ -10,11 +10,11 @@ ARG https_proxy=http://172.17.0.1:1080
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get install -y software-properties-common \
+    && apt-get install --no-install-recommends -y software-properties-common \
     apt-utils \
     && add-apt-repository ppa:apt-fast/stable -y \
     && apt-get update -y \
-    && apt-get -y install apt-fast \
+    && apt-get -y install --no-install-recommends apt-fast \
     && apt-fast -y install --no-install-recommends unzip \
     build-essential \
     cmake \
